@@ -34,6 +34,15 @@ class Lista{
         }
       }
 
+
+    /**
+     * Devuelve un array de String con las conversiones del array $list a código HTML
+     * El array $toClass es para añadir la clase correspondiente en función del tipo especificado
+     * 
+     * @param array $list
+     * @param array $toClass
+     * @return array
+     */
     public static function getListToHTML(array $list=NULL,array $toClass=NULL):array
     {
       $out=[];     
@@ -108,7 +117,15 @@ class Lista{
       return $out;
     }
 
-
+  /**
+   * Devuelve un String con cada código HTMl que se ha generado con el método getListToHtml,
+   * para ello lee el string devuelto por getListToHtml y los concatena todos en un solo string añadiendo saltos
+   * de línea PHP_EOL entre cada uno de ellos.
+   *
+   * @param array $list
+   * @param array $toClass
+   * @return string
+   */  
   public static function getListToHtmlToString(array $list=NULL,array $toClass=NULL):string
   {
     $out='';
